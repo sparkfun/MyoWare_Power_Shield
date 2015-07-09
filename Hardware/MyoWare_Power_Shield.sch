@@ -12492,6 +12492,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="0.1794" y="-0.4331"/>
 </polygon>
 </package>
+<package name="FIDUCIAL-1X2">
+<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="MICRO-FIDUCIAL">
+<smd name="1" x="0" y="0" dx="0.635" dy="0.635" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="LETTER_L">
@@ -17154,6 +17160,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="0.6834" y="-1.65"/>
 </polygon>
 </symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-0.762" y1="0.762" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0.762" x2="-0.762" y2="-0.762" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
+</symbol>
+<symbol name="DGND">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+<symbol name="VCC">
+<wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
+<text x="-1.016" y="3.556" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VCC" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FRAME-LETTER" prefix="FRAME">
@@ -17279,6 +17301,51 @@ logo. Default layer for the logo on the board is tSilk.</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FIDUCIAL" prefix="FID">
+<description>&lt;b&gt;Fiducial Alignment Points&lt;/b&gt;
+Various fiducial points for machine vision alignment.</description>
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1X2" package="FIDUCIAL-1X2">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="UFIDUCIAL" package="MICRO-FIDUCIAL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND" prefix="GND">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="DGND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="VCC" prefix="SUPPLY">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="VCC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -17294,12 +17361,23 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <part name="JP2" library="SparkFun-Connectors" deviceset="M03" device="1X03_NO_SILK" value="Power"/>
 <part name="JP3" library="SparkFunJan2012" deviceset="STAND-OFF" device=""/>
 <part name="JP4" library="SparkFunJan2012" deviceset="STAND-OFF" device=""/>
-<part name="BAT1" library="SparkFun-Electromechanical" deviceset="BATTERY" device="20MM_4LEGS_OVERPASTE"/>
-<part name="BAT2" library="SparkFun-Electromechanical" deviceset="BATTERY" device="20MM_4LEGS_OVERPASTE"/>
+<part name="BAT1" library="SparkFun-Electromechanical" deviceset="BATTERY" device="20MM_4LEGS_OVERPASTE">
+<attribute name="PROD_ID" value="BATT-10373"/>
+</part>
+<part name="BAT2" library="SparkFun-Electromechanical" deviceset="BATTERY" device="20MM_4LEGS_OVERPASTE">
+<attribute name="PROD_ID" value="BATT-10373"/>
+</part>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M03" device="1X03_NO_SILK" value="Power"/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="SFE_LOGO_NAME_FLAME" device=".1_INCH"/>
 <part name="LOGO2" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="M" value="OSHW-LOGOM"/>
+<part name="FID1" library="SparkFun-Aesthetics" deviceset="FIDUCIAL" device="1X2"/>
+<part name="FID2" library="SparkFun-Aesthetics" deviceset="FIDUCIAL" device="1X2"/>
+<part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17307,40 +17385,62 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <text x="308.356" y="-46.99" size="2.54" layer="94">Brian E Kaminski of Advancer Technologies</text>
 <text x="290.83" y="-51.054" size="2.54" layer="94" ratio="10">Revised by: Brent Wilkins</text>
 <text x="378.46" y="-50.8" size="2.54" layer="94" font="vector">v01</text>
+<text x="261.62" y="27.94" size="1.778" layer="97" font="vector" ratio="15" align="center">VCC (+VS) +2.7V to +5.9V
+EXPECT UP TO VCC ON SIGNAL LINES</text>
 </plain>
 <instances>
 <instance part="JP2" gate="G$1" x="312.42" y="50.8" rot="R180"/>
 <instance part="JP3" gate="G$1" x="386.08" y="-25.4"/>
 <instance part="JP4" gate="G$1" x="386.08" y="-33.02"/>
-<instance part="BAT1" gate="G$1" x="261.62" y="50.8"/>
-<instance part="BAT2" gate="G$1" x="261.62" y="35.56"/>
+<instance part="BAT1" gate="G$1" x="261.62" y="50.8" smashed="yes">
+<attribute name="PROD_ID" x="261.62" y="50.8" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="260.35" y="55.88" size="1.778" layer="95"/>
+<attribute name="VALUE" x="257.81" y="44.45" size="1.778" layer="96"/>
+</instance>
+<instance part="BAT2" gate="G$1" x="261.62" y="40.64" smashed="yes">
+<attribute name="PROD_ID" x="261.62" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="260.35" y="33.02" size="1.778" layer="95"/>
+<attribute name="VALUE" x="257.81" y="34.29" size="1.778" layer="96"/>
+</instance>
 <instance part="JP1" gate="G$1" x="210.82" y="50.8"/>
 <instance part="FRAME1" gate="G$1" x="142.24" y="-58.42"/>
 <instance part="FRAME1" gate="V" x="289.56" y="-58.42"/>
 <instance part="LOGO1" gate="G$1" x="276.86" y="-25.4"/>
 <instance part="LOGO2" gate="G$1" x="378.46" y="-12.7"/>
+<instance part="FID1" gate="G$1" x="381" y="-25.4"/>
+<instance part="FID2" gate="G$1" x="381" y="-33.02"/>
+<instance part="GND1" gate="1" x="231.14" y="48.26"/>
+<instance part="GND2" gate="1" x="274.32" y="45.72"/>
+<instance part="GND3" gate="1" x="294.64" y="45.72"/>
+<instance part="SUPPLY1" gate="G$1" x="254" y="53.34"/>
+<instance part="SUPPLY2" gate="G$1" x="302.26" y="55.88"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="GND" class="0">
 <segment>
-<wire x1="304.8" y1="50.8" x2="302.26" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="G$1" pin="2"/>
-<label x="302.26" y="50.8" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="BAT1" gate="G$1" pin="-"/>
-<wire x1="266.7" y1="50.8" x2="269.24" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="BAT2" gate="G$1" pin="-"/>
-<wire x1="266.7" y1="50.8" x2="266.7" y2="35.56" width="0.1524" layer="91"/>
-<junction x="266.7" y="50.8"/>
-<label x="269.24" y="50.8" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="304.8" y1="50.8" x2="294.64" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="294.64" y1="50.8" x2="294.64" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="G$1" pin="3"/>
-<wire x1="218.44" y1="53.34" x2="220.98" y2="53.34" width="0.1524" layer="91"/>
-<label x="220.98" y="53.34" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="218.44" y1="53.34" x2="231.14" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="231.14" y1="53.34" x2="231.14" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="274.32" y1="48.26" x2="274.32" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="BAT1" gate="G$1" pin="-"/>
+<wire x1="266.7" y1="50.8" x2="269.24" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="BAT2" gate="G$1" pin="-"/>
+<wire x1="269.24" y1="50.8" x2="269.24" y2="40.64" width="0.1524" layer="91"/>
+<junction x="269.24" y="50.8"/>
+<wire x1="269.24" y1="40.64" x2="266.7" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="50.8" x2="269.24" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SIG" class="0">
@@ -17348,21 +17448,6 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <wire x1="304.8" y1="48.26" x2="302.26" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="G$1" pin="3"/>
 <label x="302.26" y="48.26" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="+VS" class="0">
-<segment>
-<pinref part="JP2" gate="G$1" pin="1"/>
-<wire x1="304.8" y1="53.34" x2="302.26" y2="53.34" width="0.1524" layer="91"/>
-<label x="302.26" y="53.34" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="BAT1" gate="G$1" pin="+"/>
-<wire x1="256.54" y1="50.8" x2="254" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="BAT2" gate="G$1" pin="+"/>
-<wire x1="256.54" y1="50.8" x2="256.54" y2="35.56" width="0.1524" layer="91"/>
-<junction x="256.54" y="50.8"/>
-<label x="254" y="50.8" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SHLD" class="0">
@@ -17379,9 +17464,33 @@ logo. Default layer for the logo on the board is tSilk.</description>
 <label x="220.98" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
+<net name="VCC" class="0">
+<segment>
+<pinref part="BAT1" gate="G$1" pin="+"/>
+<wire x1="256.54" y1="50.8" x2="254" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="BAT2" gate="G$1" pin="+"/>
+<wire x1="254" y1="50.8" x2="254" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="254" y1="50.8" x2="254" y2="40.64" width="0.1524" layer="91"/>
+<junction x="254" y="50.8"/>
+<wire x1="254" y1="40.64" x2="256.54" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="304.8" y1="53.34" x2="302.26" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
+<wire x1="302.26" y1="55.88" x2="302.26" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
