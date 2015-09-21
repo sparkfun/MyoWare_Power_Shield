@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.1">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -17464,7 +17464,7 @@ Various fiducial points for machine vision alignment.</description>
 <plain>
 <text x="308.356" y="-46.99" size="2.54" layer="94">Brian E Kaminski of Advancer Technologies</text>
 <text x="290.83" y="-51.054" size="2.54" layer="94" ratio="10">Revised by: Brent Wilkins</text>
-<text x="378.46" y="-50.8" size="2.54" layer="94" font="vector">v01</text>
+<text x="378.46" y="-50.8" size="2.54" layer="94" font="vector">v10</text>
 <text x="261.62" y="27.94" size="1.778" layer="97" font="vector" ratio="15" align="center">VCC (+VS) +2.7V to +5.9V
 EXPECT UP TO VCC ON SIGNAL LINES</text>
 </plain>
