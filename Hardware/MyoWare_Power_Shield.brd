@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -54,7 +54,7 @@
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="3" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
@@ -155,27 +155,24 @@
 <text x="24.638" y="5.0165" size="1.27" layer="21" font="vector" ratio="20" rot="R180" align="center">+</text>
 <text x="23.4315" y="-3.1115" size="1.016" layer="21" ratio="17" rot="R180" align="center-left">SIG</text>
 <text x="23.39975" y="-0.1905" size="1.27" layer="21" ratio="17" rot="R180" align="center-left">-</text>
-<wire x1="-18.2245" y1="-10.3505" x2="18.2245" y2="-10.3505" width="0.2032" layer="20"/>
+<wire x1="-18.2245" y1="-10.414" x2="18.2245" y2="-10.414" width="0.2032" layer="20"/>
 <text x="-23.368" y="3.3655" size="1.016" layer="21" ratio="17" align="center-left">RAW</text>
-<wire x1="-26.035" y1="-2.54" x2="-26.035" y2="2.54" width="0.2032" layer="20"/>
-<wire x1="-26.035" y1="2.54" x2="-26.035" y2="2.6035" width="0.2032" layer="20"/>
-<wire x1="-18.2245" y1="10.3505" x2="-26.035" y2="2.54" width="0.2032" layer="20" curve="90"/>
-<wire x1="-26.035" y1="-2.54" x2="-18.2245" y2="-10.3505" width="0.2032" layer="20" curve="90"/>
-<wire x1="26.035" y1="2.54" x2="26.035" y2="-2.54" width="0.2032" layer="20"/>
-<wire x1="18.2245" y1="-10.3505" x2="26.035" y2="-2.54" width="0.2032" layer="20" curve="90"/>
-<wire x1="26.035" y1="2.54" x2="18.2245" y2="10.3505" width="0.2032" layer="20" curve="90"/>
+<wire x1="-26.162" y1="-2.54" x2="-26.162" y2="2.54" width="0.2032" layer="20"/>
+<wire x1="-18.2245" y1="10.414" x2="-26.162" y2="2.54" width="0.2032" layer="20" curve="90"/>
+<wire x1="-26.162" y1="-2.54" x2="-18.2245" y2="-10.414" width="0.2032" layer="20" curve="90"/>
+<wire x1="26.162" y1="2.54" x2="26.162" y2="-2.54" width="0.2032" layer="20"/>
+<wire x1="18.2245" y1="-10.414" x2="26.162" y2="-2.54" width="0.2032" layer="20" curve="90"/>
+<wire x1="26.162" y1="2.54" x2="18.2245" y2="10.414" width="0.2032" layer="20" curve="90"/>
 <text x="0" y="-7.14375" size="1.27" layer="22" font="vector" ratio="20" rot="MR0" align="center">Power Shield</text>
-<wire x1="-18.2245" y1="10.3505" x2="18.2245" y2="10.3505" width="0.2032" layer="20"/>
+<wire x1="-18.2245" y1="10.414" x2="18.2245" y2="10.414" width="0.2032" layer="20"/>
 <text x="0" y="8.09625" size="1.27" layer="22" font="vector" ratio="15" rot="MR0" align="center">Insert batteries (-) side to PCB</text>
 <text x="-1.825" y="-32.453" size="1.778" layer="51" font="vector">Brian E Kaminski of Advancer Technologies</text>
 <text x="-20.875" y="-34.993" size="1.778" layer="51" font="vector">Revised by: Brent Wilkins</text>
 <text x="18.1405" y="-9.598" size="0.8128" layer="1" font="vector" ratio="20">v10</text>
-<dimension x1="-22.098" y1="6.477" x2="22.098" y2="-6.477" x3="-30.48" y3="0" textsize="1.778" layer="47" dtype="vertical" unit="inch"/>
-<dimension x1="-18.2245" y1="-10.3505" x2="-15.031465625" y2="10.344659375" x3="-35.012628125" y3="-0.00291875" textsize="1.778" layer="47" dtype="vertical" unit="inch"/>
-<dimension x1="-22.098" y1="6.477" x2="22.098" y2="-6.477" x3="0" y3="14.683740625" textsize="1.778" layer="47" dtype="horizontal" unit="inch"/>
-<dimension x1="26.035" y1="2.54" x2="-26.035" y2="2.54" x3="0" y3="18.975325" textsize="1.778" layer="47" unit="inch"/>
-<dimension x1="22.098" y1="-6.477" x2="26.63825" y2="-11.08075" x3="28.953459375" y3="-11.0799875" textsize="1.778" layer="47" dtype="leader" unit="inch"/>
-<text x="28.991053125" y="-11.0878625" size="1.27" layer="47" font="vector">0.13" diameter typical</text>
+<dimension x1="-22.098" y1="6.477" x2="22.098" y2="-6.477" x3="-28.194" y3="0" textsize="1.778" textratio="15" layer="47" dtype="vertical" unit="inch"/>
+<dimension x1="-22.098" y1="6.477" x2="22.098" y2="-6.477" x3="0" y3="13.921740625" textsize="1.778" textratio="15" layer="47" dtype="horizontal" unit="inch"/>
+<dimension x1="22.098" y1="-6.477" x2="26.63825" y2="-11.08075" x3="28.953459375" y3="-11.0799875" textsize="1.778" textratio="15" layer="47" dtype="leader" unit="inch"/>
+<text x="28.991053125" y="-11.0878625" size="1.27" layer="47" font="vector" ratio="15">0.13" diameter typical</text>
 <text x="0" y="23.58516875" size="1.778" layer="47" font="vector" ratio="15" align="center">All units in inches</text>
 <text x="23.3242625" y="0.001940625" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="center-left">GND</text>
 <text x="23.31421875" y="2.538540625" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="center-left">+VS</text>
@@ -183,6 +180,8 @@
 <text x="-23.29401875" y="-0.01116875" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="center-right">SHLD</text>
 <text x="-23.3278375" y="2.541353125" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="center-right">RAW</text>
 <text x="-23.2778375" y="-2.5418875" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="center-right">GND</text>
+<dimension x1="-18.2245" y1="10.414" x2="-18.034" y2="-10.414" x3="-32.766" y3="0" textsize="1.778" textratio="15" layer="47" dtype="vertical" unit="inch"/>
+<dimension x1="-26.162" y1="2.54" x2="26.162" y2="2.286" x3="0" y3="18.542" textsize="1.778" textratio="15" layer="47" dtype="horizontal" unit="inch"/>
 </plain>
 <libraries>
 <library name="advancer-technologies">
@@ -9378,16 +9377,16 @@ design rules under a new name.</description>
 <signals>
 <signal name="GND" airwireshidden="yes">
 <polygon width="0.2032" layer="1">
-<vertex x="-26.3525" y="-10.922"/>
-<vertex x="26.797" y="-10.795"/>
-<vertex x="26.797" y="10.6045"/>
-<vertex x="-26.3525" y="10.4775"/>
+<vertex x="-26.162" y="-10.414"/>
+<vertex x="26.162" y="-10.414"/>
+<vertex x="26.162" y="10.414"/>
+<vertex x="-26.162" y="10.414"/>
 </polygon>
 <polygon width="0.2032" layer="16">
-<vertex x="-26.51125" y="-11.27125"/>
-<vertex x="26.63825" y="-11.08075"/>
-<vertex x="26.63825" y="10.38225"/>
-<vertex x="-26.51125" y="10.19175"/>
+<vertex x="-26.162" y="-10.414"/>
+<vertex x="26.162" y="-10.414"/>
+<vertex x="26.162" y="10.414"/>
+<vertex x="-26.162" y="10.414"/>
 </polygon>
 <contactref element="JP2" pad="2"/>
 <contactref element="BAT1" pad="2"/>
